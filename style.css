@@ -36,6 +36,7 @@ body {
 }
 
 .article {
+  position: relative;
   display: grid;
   width: min(90%, 80rem);
   margin-inline: auto;
@@ -57,6 +58,8 @@ body {
   margin-inline: auto;
 }
 
+
+
 .article__main__title {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -74,7 +77,7 @@ body {
 }
 
 .article__main__footer {
-  position: relative;
+  position: static;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -113,7 +116,71 @@ body {
   height: 1.5rem;
 }
 
-@media only screen and (min-width: 56.25rem) {
+.article__main__cta {
+  cursor: pointer;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--clr-dark-blue);
+  padding: 1.5rem 2.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+.article__main__cta__para {
+  text-transform: uppercase;
+  color: var(--clr-light-blue);
+  letter-spacing: 4px;
+  font-size: 1.5rem;
+  font-weight: var(--fw-medium);
+}
+
+.article__main__cta__icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.article__main__cta__shareBtn-wrapper:hover {
+  cursor: pointer;
+  background-color: var(--clr-grayish-blue);
+}
+.article__main__cta__shareBtn-wrapper:hover
+  .article__main__cta__shareBtn
+  path {
+  fill: var(--clr-light-blue);
+}
+
+.article__main__cta__shareBtn-wrapper:hover + .article__main__cta {
+  visibility: visible;
+  opacity: 1;
+}
+
+.article__main__cta__icon {
+  transition: all 0.2s ease-in;
+}
+.article__main__cta:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.article__main__cta__icon:hover {
+  cursor: pointer;
+}
+.article__main__cta__icon:hover path {
+  fill: hsl(210, 46%, 90%);
+}
+
+@media only screen and (min-width: 56.25em) {
   body {
     height: 100vh;
     display: flex;
@@ -134,9 +201,10 @@ body {
   .article__main__cta {
     visibility: hidden;
     position: absolute;
-    right: -50%;
-    top: -50%;
-    transform: translate(-50%, -82%);
+    width: 70%;
+    right: 0;
+    top: 0;
+    transform: translate(88.5%, -135%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,6 +228,10 @@ body {
     border-bottom: 0;
     border-top: 6rem solid var(--clr-dark-blue);
     z-index: -100;
+  }
+
+  .article__main__cta .article__main__cta__shareBtn-wrapper{
+    display: none;
   }
 
   .article__main__cta__para {
@@ -204,5 +276,14 @@ body {
   }
   .article__main__cta__icon:hover path {
     fill: hsl(210, 46%, 90%);
+  }
+  .article__main__footer{
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 37.5em){
+  .article{
+    width: 70%;
   }
 }
