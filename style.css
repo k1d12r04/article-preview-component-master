@@ -16,6 +16,8 @@
   --clr-grayish-blue: hsl(212, 23%, 69%);
   --clr-light-blue: hsl(210, 46%, 95%);
 
+  --ff-primary: "Manrope", sans-serif;
+
   --fw-medium: 500;
   --fw-bold: 700;
 }
@@ -29,5 +31,83 @@ img{
 }
 
 body{
-  font-family: "Manrope", sans-serif;
+  font-family: var(--ff-primary);
+  background-color: var(--clr-grayish-blue);
+}
+
+
+.article{
+  display: grid;
+  width: min(90%, 50rem);
+  margin-inline: auto;
+  background-color: var(--clr-light-blue);
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  border-radius: 1rem;
+}
+
+.article__img{
+  height: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.article__main{
+  width: 80%;
+  margin-inline: auto;
+  
+}
+
+.article__main__title{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  color: var(--clr-dark-blue);
+  font-weight: var(--fw-bold);
+}
+
+.article__main__para{
+  font-family: var(--ff-primary);
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: var(--clr-unsaturated-blue);
+  line-height: 1.6;
+}
+
+.article__main__footer{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.article__main__footer__img{
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.article__main__footer__info__userName{
+  color: var(--clr-dark-blue);
+  font-size: 1.3rem;
+}
+
+.article__main__footer__info__date{
+  font-size: 1.3rem;
+  color: var(--clr-unsaturated-blue);
+}
+
+.article__main__cta__shareBtn-wrapper{
+  margin-left: auto;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(212, 23%, 90%);
+  border-radius: 50%;
+}
+
+.article__main__cta__shareBtn{
+  width: 1.5rem;
+  height: 1.5rem;
 }
